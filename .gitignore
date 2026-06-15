@@ -1,0 +1,17 @@
+# IDE
+.idea/
+
+# VS Code
+.vscode/
+
+# Build directories
+build/
+_build/
+output/
+
+# OS / editor
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
