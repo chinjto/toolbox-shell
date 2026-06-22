@@ -39,15 +39,29 @@ _init_git() {
 }
 
 _init_angular() {
-    _init_git
+    printf "Init Git local repository? [y/N] "
+    read -r ANSWER
+
+    case "$ANSWER" in
+        y|Y|yes|YES)
+            _init_git
+            ;;
+    esac
 
     echo "Angular project initialized."
 }
 
 _init_latex() {
-     _init_git
+    printf "Init Git local repository? [y/N] "
+    read -r ANSWER
 
-     echo "LaTeX project initialized."
+    case "$ANSWER" in
+        y|Y|yes|YES)
+            _init_git
+            ;;
+    esac
+
+    echo "LaTeX project initialized."
  }
 
   project-init() {
