@@ -7,6 +7,9 @@ release() {
 deploy() {
   make deploy VERSION="$1"
 }
+publish() {
+  make publish VERSION="$1"
+}
 feature() {
   make feature NAME="$1"
 }
@@ -29,3 +32,5 @@ alias commit='make commit'
 alias lint='make lint'
 alias format='make format'
 alias deliver='make deliver'
+alias sandbox='make sandbox'
+alias sandbox:clean='make sandbox-clean'
