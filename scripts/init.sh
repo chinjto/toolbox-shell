@@ -48,6 +48,35 @@ _init_angular() {
             ;;
     esac
 
+    printf "Project name: "
+    read -r PROJECT_NAME
+
+    if [ -n "$NAME" ]; then
+      echo "Project name = $PROJECT_NAME"
+    else
+      PROJECT_NAME="temporary_project"
+      echo "Project name = $PROJECT_NAME"
+    fi
+
+    ng new $PROJECT_NAME \
+        --directory . \
+        --routing \
+        --style=scss \
+        --standalone \
+        --skip-git \
+        --package-manager=npm \
+        --zoneless
+
+    printf "Init @chinjto/generator-angular? [y/N] "
+    read -r ANSWER
+
+    case "$ANSWER" in
+        y|Y|yes|YES)
+            npm install -D @chinjto/generator-angular
+            ng add @chinjto/generator-angular --skip-confirmation
+            ;;
+    esac
+
     echo "Angular project initialized."
 }
 
